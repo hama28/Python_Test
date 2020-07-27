@@ -55,3 +55,16 @@ print(bot)
 # 改行
 line = "line1\nline2\nline3"
 print(line)
+
+# スライス
+fict = ["トルストイ","カミュ","オーウェル","ハクスリー","オースティン"]
+print(fict[0:3])
+
+ivan = "死の代わりにひとつの光があった"
+print(ivan[0:6])
+print(ivan[6:16])
+
+gene = "はじめに神は天と地とを創造された。地は形なく、むなしく、やみが淵のおもてにあり、神の霊が水のおもてをおおっていた。神は「光あれ」と言われた。すると光があった。"
+print(gene[:17])
+print(gene[17:57])
+print(gene[57:])
