@@ -39,7 +39,8 @@ class Deck:
             for j in range(4):
                 self.cards.append(Card(i, j))
         shuffle(self.cards)
-        
+    
+    # リストから要素を１つ削除して、削除した要素をリターンする
     def rm_card(self):
         if len(self.cards) == 0:
             return
@@ -72,9 +73,11 @@ class Game:
     def play_game(self):
         cards = self.deck.cards
         print("戦争を始めます！")
+        # デッキのカードが2枚未満になるまで繰り返す
         while len(cards) >= 2:
             m = "q で終了、それ以外のキーでPlay:"
             responce = input(m)
+            # q が入力されたら繰り返しの終了
             if responce == 'q':
                 break
             p1c = self.deck.rm_card()
@@ -82,6 +85,7 @@ class Game:
             p1n = self.p1.name
             p2n = self.p2.name
             self.draw(p1n, p1c, p2n, p2c)
+            # 勝った方の wins 変数をインクリメント
             if p1c > p2c:
                 self.p1.wins += 1
                 self.wins(self.p1.name)
