@@ -15,7 +15,7 @@ class Scraper:
         now = datetime.datetime.now()
         print(now.strftime('%Y年%m月%d日%H時%M分%S秒'))
 
-        fav = 400
+        bookmark = 400
         
         with open("test.csv", "a", newline='') as f:
             w = csv.writer(f)
@@ -26,7 +26,7 @@ class Scraper:
                 user = div.span
                 user_num = user.getText().split(" ")
             
-                if int(user_num[0]) >= fav:
+                if int(user_num[0]) >= bookmark:
                     print(title.getText())
                     print(url.get('href'))
                     print(user.getText())
