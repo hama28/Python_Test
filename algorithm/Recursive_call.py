@@ -15,18 +15,25 @@ def bottles_of_bear(bob):
 
     :param bob: Must be a positive integer.
     """
+    # ここから「 1) 再起終了条件の用意」のコード
     if bob < 1:
         print("""No more bottles of bear on the wall.
               No more bottles of bear.""")
         return
+    # ここまで。変数bobが1未満になったら、関数が終了して再帰呼び出しが終わる
 
     tmp = bob
+    # ここから「 2) 再起終了条件に進んでいく」のコード
     bob -= 1
+    # ここまで。変数bobをデクリメントして、再起終了条件に進んでいく
+
     print("""{} bottles of bear on the wall.
           {} bottles of bear.
           Take one down, pass it around,
           {} bottles of bear on the wall.
           """.format(tmp, tmp, bob))
+    
+    # ここから「 3) 再帰的に関数自身を呼び出す」のコード
     bottles_of_bear(bob)
 
 
